@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="./dist/css/style.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+    <div class="logo">
+      <img src="./images/logo.svg" alt="img">
+    </div>
+
+    <div class="container">
+      <section class="container__left">
+        <div class="bill">
+          <form>
+            <div class="bill__title">
+              <label class="mb-5">Bill</label>
+              <p id="bill-warning">Can't be zero or empty </p>
+            </div>
+            <input type="number" id="bill-amt">
+          </form>
+        </div>
+
+        <div class="select-tip">
+          <label>Select Tip %</label>
+          <div class="button--list">
+            <button onclick="buttonid(this)" value="5">5%</button>
+            <button onclick="buttonid(this)" value="10">10%</button>
+            <button onclick="buttonid(this)" value="15">15%</button>
+            <button onclick="buttonid(this)" value="25">25%</button>
+            <button onclick="buttonid(this)" value="50">50%</button>
+            <input type="number" id="custom" placeholder="Custom">
+          </div>
+        </div>
+
+        <div class="people">
+          <form>
+            <div class="people__title">
+              <label>No. of People</label>
+              <p id="people-warning">Can't be zero or empty</p>
+            </div>
+            <input type="number" id="people-quantity">
+          </form>
+        </div>
+
+      </section>
+      <section class="container__right">
+        <div class="totals">
+          <div class="total-1">
+            <h3>Tip Amount <br><span>/person</span></h3>
+            <p id="total-tip">$0.00</p>
+          </div>
+
+          <div class="total-2">
+            <h3>Total <br><span>/person</span></h3>
+            <p id="total-amt">$0.00</p>
+          </div>
+        </div>
+
+        <button type="reset" class="reset" id="reset">RESET</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="./app.js"></script>
+
+</body>
+
+</html>

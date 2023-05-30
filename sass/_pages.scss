@@ -1,0 +1,272 @@
+body {
+  background-color: $lightcyan;
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+    @include flexbox(center, center);
+    flex-direction: column;
+    gap: 2rem;
+
+    .logo {
+      img {
+        @include img(100%, 100%, cover);
+      }
+    }
+
+    .container {
+      @include grid("1fr 1fr", "1fr");
+
+      padding: 1.25rem;
+      background-color: $white;
+      border-radius: 1rem;
+
+      &__left {
+        padding: 0 1.25rem;
+        .bill {
+          color: $darkgrayishcyan;
+          margin-bottom: 1rem;
+
+          &__title {
+            @include flexbox(space-between, center);
+            label {
+              font-size: 1.125rem;
+              font-weight: 700;
+            }
+            p {
+              font-size: 0.875rem;
+              display: none;
+              color: red;
+            }
+          }
+
+          input {
+            height: 3.125rem;
+            width: 100%;
+            background-color: $lightcyan;
+            border-radius: 0.5rem;
+            border: none;
+            outline: none;
+            padding-right: 1.125rem;
+            font-size: 1.25rem;
+            text-align: right;
+
+            &:focus {
+              border: 2px solid $darkcyan;
+            }
+          }
+        }
+
+        .select-tip {
+          margin-bottom: 1rem;
+          label {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: $darkgrayishcyan;
+          }
+
+          .button--list {
+            margin-top: 5px;
+            button {
+              height: 3.125rem;
+              width: 7.5rem;
+              background-color: $darkcyan;
+              color: $white;
+              border-radius: 0.5rem;
+              border: none;
+              outline: none;
+              margin-bottom: 0.5rem;
+              font-size: 1.125rem;
+              font-weight: 700;
+              transition: all 0.5s ease;
+
+              &:hover {
+                cursor: pointer;
+                background-color: $primary;
+              }
+            }
+
+            input {
+              height: 3.125rem;
+              width: 7.5rem;
+              font-size: 1.125rem;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              background-color: $lightcyan;
+              border: none;
+              outline: none;
+              text-align: center;
+              color: $darkcyan;
+            }
+          }
+        }
+
+        .people {
+          color: $darkgrayishcyan;
+          margin-bottom: 1rem;
+
+          &__title {
+            @include flexbox(space-between, center);
+            label {
+              font-size: 1.25rem;
+              font-weight: 700;
+              margin-bottom: 0.5rem;
+            }
+            p {
+              font-size: 0.875rem;
+              display: none;
+              color: red;
+            }
+          }
+
+          input {
+            height: 2.8125rem;
+            width: 100%;
+            background-color: $lightcyan;
+            border-radius: 0.5rem;
+            border: none;
+            outline: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $darkcyan;
+            text-align: right;
+            padding-right: 1.125rem;
+
+            &:focus {
+              border: 2px solid $darkcyan;
+            }
+          }
+        }
+      }
+
+      &__right {
+        background-color: $darkcyan;
+        padding: 2.5rem;
+        border-radius: 1.25rem;
+        @include flexbox(space-between, flex-start);
+        flex-direction: column;
+
+        .totals {
+          width: 100%;
+
+          .total-1 {
+            @include flexbox(space-between, center);
+
+            margin-bottom: 1rem;
+            h3 {
+              font-size: 1.125rem;
+              color: $white;
+
+              span {
+                font-size: 0.875rem;
+                color: $darkgrayishcyan;
+              }
+            }
+
+            p {
+              font-size: 2.5rem;
+              font-weight: 700;
+              color: $primary;
+            }
+          }
+
+          .total-2 {
+            @include flexbox(space-between, center);
+
+            h3 {
+              font-size: 1.125rem;
+              color: $white;
+
+              span {
+                font-size: 0.875rem;
+                color: $darkgrayishcyan;
+              }
+            }
+
+            p {
+              font-size: 2.5rem;
+              font-weight: 700;
+              color: $primary;
+            }
+          }
+        }
+
+        button {
+          height: 3.125rem;
+          width: 100%;
+          border-radius: 0.5rem;
+          text-align: center;
+          text-transform: uppercase;
+          background-color: $primary;
+          color: $darkgrayishcyan;
+          font-size: 1.125rem;
+          font-weight: 700;
+          border: none;
+          outline: none;
+          transition: all 0.5s ease;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $verylightcyan;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  body {
+    label,
+    h3 {
+      font-size: 1rem !important;
+    }
+    main {
+      min-height: auto;
+      padding: 2rem 1.5rem;
+
+      .container {
+        @include grid("1fr", "1fr");
+
+        &__left {
+          padding: 0;
+          .select-tip {
+            .button--list {
+              @include grid("1fr 1fr", "1fr");
+              column-gap: 8px;
+              button {
+                width: 100%;
+                font-size: 1rem;
+              }
+
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        &__right {
+          padding: 1.5rem;
+
+          .total-1 {
+            gap: 1rem;
+
+            p {
+              font-size: 1.5rem !important;
+            }
+          }
+          .total-2 {
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            p {
+              font-size: 1.5rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
